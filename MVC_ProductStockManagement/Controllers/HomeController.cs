@@ -15,15 +15,20 @@ namespace MVC_ProductStockManagement.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = " -----------> <--------------------";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact page";
 
+            return View();
+        }
+
+        public ActionResult Info()
+        {
             return View();
         }
     }
