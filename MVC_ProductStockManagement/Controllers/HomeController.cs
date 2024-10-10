@@ -31,5 +31,12 @@ namespace MVC_ProductStockManagement.Controllers
         {
             return View();
         }
+
+        public ActionResult MyProfile()
+        {
+            return View();
+        }
+
+       
     }
 }
