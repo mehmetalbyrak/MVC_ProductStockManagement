@@ -2,8 +2,36 @@
     ViewBag.Title = "About";
 }
 <main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
 
-    <p> Welcome to About page :d</p>
+
+    <form method="get">
+
+        <fieldset>
+            Choose Movie <select id="MovieType" name="MovieType" class="form-control">
+
+               
+
+                <option value="0">Action</option>
+
+                <option value="1">Drama</option>
+
+                <option value="2">Comedy</option>
+
+                <option value="3">Science Fiction</option>
+
+                <option value="4">Western</option>
+
+                <option value="5">Romance</option>
+
+                <option value="6">Anime</option>
+
+            </select>
+
+            
+
+        </fieldset>
+
+    </form>
+
+
 </main>

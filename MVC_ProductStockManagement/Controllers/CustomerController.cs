@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,26 +7,26 @@ using MVC_ProductStockManagement.Models.Entity;
 
 namespace MVC_ProductStockManagement.Controllers
 {
-    public class CategoryController : Controller
+    public class CustomerController : Controller
     {
-        // GET: Category
         MVCStockDBEntities db = new MVCStockDBEntities();
+        // GET: Customer
         public ActionResult Index()
         {
-            var values = db.Categories.ToList();
+            var values = db.Customers.ToList();
             return View(values);
         }
 
         [HttpGet]
-        public ActionResult NewCategory()
+        public ActionResult NewCustomer()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult NewCategory(Category category) // ekleme yaparken bunu yap
+        public ActionResult NewCustomer(Customer customer)
         {
-            db.Categories.Add(category);
+            db.Customers.Add(customer);
             db.SaveChanges();
             return View();
         }

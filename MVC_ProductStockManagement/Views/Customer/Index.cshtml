@@ -1,0 +1,40 @@
+﻿@using MVC_ProductStockManagement.Models.Entity
+@model List<Customer>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<table class = "table table-bordered">
+    <tr>
+        <th>Customer Id</th>
+        <th>Customer Name</th>
+        <th>Customer Last Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    <tbody>
+        @foreach(var customer in Model)
+            {
+                <tr>
+                    <th>
+                        @customer.CustomerId
+                    </th>
+                    <td>
+                        @customer.CustomerName
+                    </td>
+                    <td>
+                        @customer.CustomerLastName
+                    </td>
+                    <td><a href= "/Customer/Delete/@customer.CustomerId" class="btn btn-danger"> Delete </a></td>
+                    <td><a href= "/Customer/Update/@customer.CustomerId" class="btn btn-success"> Update </a></td>
+                </tr>
+            }
+    </tbody> </table>
+
+<a href= "/Customer/NewCustomer/" class = "btn btn-primary"> Add New Customer </a>
+
