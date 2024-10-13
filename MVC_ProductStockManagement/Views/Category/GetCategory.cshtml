@@ -7,10 +7,10 @@
 
 <h2>GetCategory</h2>
 
-@using (Html.BeginForm("update", "Category", FormMethod.Post))
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
             {
                 <div class="form-group">
-                    @Html.LabelFor(m=>m.CategoryId)
+                    @Html.LabelFor(m => m.CategoryId)
                     @Html.TextBoxFor(m => m.CategoryId, new { @class = "form-control" })
                     <br />
                     @Html.LabelFor(m=>m.CategoryName)

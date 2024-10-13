@@ -46,5 +46,14 @@ namespace MVC_ProductStockManagement.Controllers
             var category = db.Categories.Find(id);
             return View("GetCategory", category);
         }
+
+        public ActionResult UpdateCategory(Category category)
+        {
+            var forUpdateCategory = db.Categories.Find(category.CategoryId);
+            forUpdateCategory.CategoryName = category.CategoryName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
+

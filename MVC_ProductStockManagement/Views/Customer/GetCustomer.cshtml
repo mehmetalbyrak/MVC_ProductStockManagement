@@ -1,0 +1,24 @@
+﻿@model MVC_ProductStockManagement.Models.Entity.Customer
+@{
+    ViewBag.Title = "GetCustomer";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>GetCustomer</h2>
+
+@using (Html.BeginForm("UpdateCustomer", "Customer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.CustomerId)
+        @Html.TextBoxFor(c => c.CustomerId, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.CustomerName)
+        @Html.TextBoxFor(c => c.CustomerName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.CustomerLastName)
+        @Html.TextBoxFor(c => c.CustomerLastName, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning"> Update Customer </button>
+    </div>
+}
