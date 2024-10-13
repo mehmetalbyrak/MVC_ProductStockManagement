@@ -30,5 +30,14 @@ namespace MVC_ProductStockManagement.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult DeleteCustomer(int id)
+        {
+            var customer = db.Customers.Find(id);
+            db.Customers.Remove(customer);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            
+        }
     }
 }

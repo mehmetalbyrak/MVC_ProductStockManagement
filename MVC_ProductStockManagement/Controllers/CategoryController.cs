@@ -31,5 +31,20 @@ namespace MVC_ProductStockManagement.Controllers
             db.SaveChanges();
             return View();
         }
+
+
+        public ActionResult DeleteCategory(int id)
+        {
+            var category = db.Categories.Find(id);
+            db.Categories.Remove(category);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetCategory(int id)
+        {
+            var category = db.Categories.Find(id);
+            return View("GetCategory", category);
+        }
     }
 }
