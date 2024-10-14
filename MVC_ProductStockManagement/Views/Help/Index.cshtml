@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1"> Click For Help </button>
+
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"> Welcome to the Help Menu </h2>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <label>Enter Name :d </label>
+                    <input type="text" name="Name & Last Name " class="form-control" />
+                    <br />
+                    <label>Enter what are you looking for ? </label>
+                    <input type="text" name="Write Description " class="form-control" />
+                    <br />
+                    <button class="btn btn-info"> Send </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

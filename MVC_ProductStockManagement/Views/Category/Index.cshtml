@@ -1,11 +1,14 @@
 ﻿@using MVC_ProductStockManagement.Models.Entity
-@model List<Category>
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class = "table table-bordered">
+<table class="table table-bordered">
     <tr>
         <th>Category Id</th>
         <th>Category Name</th>
@@ -14,22 +17,26 @@
     </tr>
 
     <tbody>
-        @foreach(var category in Model)
-            {
-                <tr>
-                    <th>
-                        @category.CategoryId
-                    </th>
-                    <td>
-                        @category.CategoryName
-                    </td>
-                    <td><a href= "/Category/DeleteCategory/@category.CategoryId" class="btn btn-danger"> Delete </a></td>
-                    <td><a href="/Category/GetCategory/@category.CategoryId" class="btn btn-success">Get Category</a></td>
-                    
-                </tr>
-            }
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th>
+                    @category.CategoryId
+                </th>
+                <td>
+                    @category.CategoryName
+                </td>
+                <td><a href="/Category/DeleteCategory/@category.CategoryId" class="btn btn-danger"> Delete </a></td>
+                <td><a href="/Category/GetCategory/@category.CategoryId" class="btn btn-success">Get Category</a></td>
+
+            </tr>
+        }
     </tbody>
 </table>
 
-<a href= "/Category/NewCategory/" class = "btn btn-primary"> Add New Category </a>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+<a href="/Category/NewCategory/" class="btn btn-primary"> Add New Category </a>
+
 
