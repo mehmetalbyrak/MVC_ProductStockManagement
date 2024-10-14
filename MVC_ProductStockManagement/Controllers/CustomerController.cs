@@ -26,6 +26,10 @@ namespace MVC_ProductStockManagement.Controllers
         [HttpPost]
         public ActionResult NewCustomer(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("NewCustomer");
+            }
             db.Customers.Add(customer);
             db.SaveChanges();
             return View();

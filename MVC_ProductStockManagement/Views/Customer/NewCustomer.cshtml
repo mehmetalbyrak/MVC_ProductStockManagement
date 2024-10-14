@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_ProductStockManagement.Models.Entity.Customer
 @{
     ViewBag.Title = "NewCustomer";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -9,7 +9,8 @@
 <form method="post" class="form-group">
     <div>
         <label>Customer Name</label>
-        <input type="text" class="form-control" name="CustomerName" />
+        @Html.TextBoxFor(c => c.CustomerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.CustomerName, "", new { @style = "color:green" })
     </div>
 
     <div>

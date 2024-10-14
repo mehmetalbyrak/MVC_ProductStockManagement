@@ -11,7 +11,8 @@ namespace MVC_ProductStockManagement.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,9 @@ namespace MVC_ProductStockManagement.Models.Entity
         }
     
         public int CustomerId { get; set; }
+
+        [Required(ErrorMessage ="This area can not be empty !!!")]
+        [StringLength(50, ErrorMessage = "You can enter a maximum of 50 characters")]
         public string CustomerName { get; set; }
         public string CustomerLastName { get; set; }
     

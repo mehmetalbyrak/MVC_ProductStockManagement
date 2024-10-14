@@ -50,5 +50,37 @@ namespace MVC_ProductStockManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetProduct(int id)
+        {
+            var product = db.Products.Find(id);
+            List<SelectListItem> values = (from i in db.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.CategoryName,
+                                               Value = i.CategoryId.ToString(),
+
+                                           }).ToList();
+            ViewBag.productValue = values;
+            return View("GetProduct", product);
+        }
+
+
+        public ActionResult UpdateProduct(Product product)
+        {
+            var forUpdatingProduct = db.Products.Find(product.ProductId);
+            forUpdatingProduct.ProductName = product.ProductName;
+            forUpdatingProduct.ProductBrand = product.ProductBrand;
+            forUpdatingProduct.Stock = product.Stock;
+            forUpdatingProduct.Price = product.Price;
+
+            // forUpdatingProduct.ProductCategory = product.ProductCategory;
+
+            var category = db.Categories.Where(m => m.CategoryId == product.Category.CategoryId).FirstOrDefault();
+            forUpdatingProduct.ProductCategory = category.CategoryId;
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

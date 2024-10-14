@@ -27,6 +27,10 @@ namespace MVC_ProductStockManagement.Controllers
         [HttpPost]
         public ActionResult NewCategory(Category category) // ekleme yaparken bunu yap
         {
+            if (!ModelState.IsValid)
+            {
+                return View("NewCategory");
+            }
             db.Categories.Add(category);
             db.SaveChanges();
             return View();
