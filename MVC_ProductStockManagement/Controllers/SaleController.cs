@@ -33,12 +33,9 @@ namespace MVC_ProductStockManagement.Controllers
             
             int maxId = db.Sales.Any() ? db.Sales.Max(s => s.SaleId) : 0;  
             sale.SaleId = maxId + 1;
-
-            // Yeni satış kaydını ekle
             db.Sales.Add(sale);
             db.SaveChanges();
 
-            
             return View("Index");
         }
 
