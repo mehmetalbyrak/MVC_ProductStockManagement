@@ -6,6 +6,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+@*ActionResult Name - Controller - While Running*@ 
+@using (Html.BeginForm("Index", "Customer", FormMethod.Get))
+            {
+                <p>
+                    <b> Customer Name to search for: </b>  @Html.TextBox("p")
+                    <input type="submit" value="Search" />   
+                </p>
+            }
 
 
 <table class="table table-bordered">

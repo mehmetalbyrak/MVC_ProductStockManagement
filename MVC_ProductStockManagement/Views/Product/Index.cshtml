@@ -5,47 +5,65 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class = "table table-bordered">
-    <tr>
-        <th>Product Id</th>
-        <th>Product Name</th>
-        <th>Product Brand</th>
-        <th>Product Category</th>
-        <th>Price</th>
-        <th>Stock</th>
-        <th>Delete</th>
-        <th>Update</th>
-    </tr>
+
+
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Product Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
 
     <tbody>
-        @foreach(var product in Model)
-            {
-                <tr>
-                    <th>
-                        @product.ProductId
-                    </th>
-                    <td>
-                        @product.ProductName
-                    </td>
-                    <td>
-                        @product.ProductBrand
-                    </td>
-                    <td>
-                        @product.Category.CategoryName
-                    </td>
-                    <td>
-                        @product.Price
-                    </td>
-                    <td>
-                        @product.Stock
-                    </td>
-                    <td><a href= "/Product/DeleteProduct/@product.ProductId"class="btn btn-danger"> Delete </a></td>
-                    <td><a href= "/Product/GetProduct/@product.ProductId" class="btn btn-success"> Update </a></td>
-                </tr>
-            }
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th>
+                    @product.ProductId
+                </th>
+                <td>
+                    @product.ProductName
+                </td>
+                <td>
+                    @product.ProductBrand
+                </td>
+                <td>
+                    @product.Category.CategoryName
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Stock
+                </td>
+                <td><a href="/Product/DeleteProduct/@product.ProductId" class="btn btn-danger"> Delete </a></td>
+                <td><a href="/Product/GetProduct/@product.ProductId" class="btn btn-success"> Update </a></td>
+            </tr>
+        }
     </tbody>
 
-    </table>
+</table>
 
-<a href= "/Product/NewProduct/" class = "btn btn-primary"> Add New Product </a>
+<a href="/Product/NewProduct/" class="btn btn-primary"> Add New Product </a>
 
+
+
+
+
+
+@*<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+
+<link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $('#tbl1').DataTable();
+</script>

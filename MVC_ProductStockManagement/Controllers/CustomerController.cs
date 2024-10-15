@@ -11,10 +11,17 @@ namespace MVC_ProductStockManagement.Controllers
     {
         MVCStockDBEntities db = new MVCStockDBEntities();
         // GET: Customer
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var values = db.Customers.ToList();
-            return View(values);
+
+            var values = from value in db.Customers select value;
+            if (!string.IsNullOrEmpty(p))
+            {
+                values = values.Where(c => c.CustomerName.Contains(p));
+            }
+            return View(values.ToList());
+            //var values = db.Customers.ToList();
+            //return View(values);
         }
 
         [HttpGet]
