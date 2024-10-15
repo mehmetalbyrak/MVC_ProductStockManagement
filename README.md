@@ -8,7 +8,7 @@ MVC_ProductStockManagement, **ASP.NET Framework MVC** kullanılarak geliştirilm
 
 - **Product Management**: Ürünleri kolayca ekleyin, güncelleyin ve silin. Ürün ekleme sayfasında form doğrulama (validation) işlemleri kullanılmıştır. Ürünler için arama (search) ve DataTable jQuery implementasyonu kullanılarak gelişmiş listeleme ve filtreleme özellikleri sağlanmıştır.
 - **Category Management**: Ürünleri farklı kategorilere organize edin. Bir kategoriye birden fazla ürün atanabilir. Kategori ekleme, güncelleme ve silme işlemleri mevcuttur. Kategoriler, ürünler ile ilişkili olup, kategoriye ait ürünleri listeleme ve yönetme işlemleri yapılabilir. Kategori ekleme sayfasında validation kullanılmıştır.
-- **Customer Management**: Müşterileri ekleyin, güncelleyin ve silin. Müşteri silme işlemleri alert ile yapılır. Müşteri ekleme sayfasında form doğrulama (validation) işlemleri uygulanmıştır. Müşteriler için yine arama (search) implementasyonu mevcuttur.
+- **Customer Management**: Müşterileri ekleyin, güncelleyin ve silin. Müşteri silme işlemleri ayrıca alert ile de yapılır. Müşteri ekleme sayfasında form doğrulama (validation) işlemleri uygulanmıştır. Müşteriler için yine arama (search) implementasyonu mevcuttur.
 - **Sales Tracking**: Satış işlemlerini yönetin. Yeni satış işlemleri ekleyin ve satışları takip edin. Satış sayfasında **popup** kullanımı ile kullanıcı deneyimi geliştirilmiştir.
 - **Help Sayfası**: Yardım sayfasında **popup** kullanılarak bilgi ve yönlendirme sağlanır.
 - **Dropdown List**: Ürün ekleme işlemlerinde kategori seçimleri için dropdown list kullanılmıştır.
